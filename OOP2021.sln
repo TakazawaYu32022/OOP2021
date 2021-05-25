@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter01", "Chapter01", "{44BA394C-C7AC-441F-90DC-25A91C7ECB5B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter02", "Chapter02", "{44BA394C-C7AC-441F-90DC-25A91C7ECB5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceConverter", "DistanceConverter\DistanceConverter.csproj", "{4CD3F137-91AB-4CBD-8345-75A83801FB27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesCalculator", "SalesCalculator\SalesCalculator.csproj", "{D29BFC98-1500-4B92-8740-A077992ED88E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{4CD3F137-91AB-4CBD-8345-75A83801FB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CD3F137-91AB-4CBD-8345-75A83801FB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CD3F137-91AB-4CBD-8345-75A83801FB27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D29BFC98-1500-4B92-8740-A077992ED88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29BFC98-1500-4B92-8740-A077992ED88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D29BFC98-1500-4B92-8740-A077992ED88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D29BFC98-1500-4B92-8740-A077992ED88E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4CD3F137-91AB-4CBD-8345-75A83801FB27} = {44BA394C-C7AC-441F-90DC-25A91C7ECB5B}
+		{D29BFC98-1500-4B92-8740-A077992ED88E} = {44BA394C-C7AC-441F-90DC-25A91C7ECB5B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7113F0C5-8A43-4AC4-8700-23C5823E617D}
