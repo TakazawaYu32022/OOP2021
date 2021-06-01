@@ -13,7 +13,7 @@ namespace Exercise3 {
             var amountPerCategory = sales.GetPerCategorySales();//商品カテゴリ別売り上げを求める
             foreach (var obj in amountPerCategory) {
                 Console.WriteLine("{0} {1:0,000}円", obj.Key, obj.Value);
-                //カンマや小数点はこんな感じで。円は{}の外に。
+                //カンマや小数点はこんな感じで。円は{}の外に。{1:#,#}円でも同じ結果になる。
             }
         }
     }
