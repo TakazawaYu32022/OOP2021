@@ -143,6 +143,10 @@ namespace Section01 {
 
         private static void Exercise2_5(List<string> names) {
             int count = 0;
+
+            //names.forEach(n => count += n.Count(c => char.IsLower(c)));
+            //一行にまとめるのはあまりよくない
+
             foreach(var name in names) {
                 count += name.Count(c => char.IsLower(c));
             }
