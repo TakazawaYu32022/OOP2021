@@ -7,13 +7,44 @@ using System.Threading.Tasks;
 namespace Section01 {
     class Program {
         static void Main(string[] args) {
+
+
+
+
+            //P127
+            /*
+            var Session = new Dictionary<string, object>();
+            Session["MyPro"] = new Product();
+
+            var product = Session["MyPro"] as Product;
+            if(product.Name == "") {
+                //productが取得できなかった時の処理
+                Console.WriteLine("productが取得できなかった");
+            } else {
+                //productが取得できた時の処理
+                Console.WriteLine("productが取得できた");
+            }
+            */
+
+
+            //P126
+            /*var str = "123";
+
+            int height;
+            if (int.TryParse(str, out height)) {
+                Console.WriteLine(height);
+            } else {
+                Console.WriteLine("変換できません");
+            }
+            */
+
             //P125
-            int count = 0;
+            /*int count = 0;
 
             Console.WriteLine($"後置：{count++}");
 
             Console.WriteLine($"前置：{++count}");
-
+            */
 
             //var ret = GetProductA();
 
