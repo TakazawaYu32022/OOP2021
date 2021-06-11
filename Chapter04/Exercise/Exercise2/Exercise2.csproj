@@ -54,6 +54,10 @@
       <Project>{daec1d3b-ee5e-4ca2-a320-980b3898f1b5}</Project>
       <Name>Excercise1</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Section01\Section01.csproj">
+      <Project>{343b5e78-6c27-48c2-a2d6-3d44621504fb}</Project>
+      <Name>Section01</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exercise1\Exercise1.csproj">
       <Project>{472332BB-E5D7-4077-AA26-68E59DC17224}</Project>
       <Name>Exercise1</Name>

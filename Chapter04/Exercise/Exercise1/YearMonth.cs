@@ -17,6 +17,7 @@ namespace Exercise1 {
         }
 
         //4-1-2
+        //21世紀ならTrue,(プロパティ)
         public bool Is21Century {
             get {
                 return 2001 <= Year && Year <= 2100;
@@ -34,7 +35,7 @@ namespace Exercise1 {
 
         public override string ToString() {
             return $"{Year}年{Month}月";
-            return base.ToString();
+            
         }
     }
 }
