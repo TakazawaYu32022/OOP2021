@@ -36,7 +36,7 @@ namespace Test02 {
         //問題１　合計値を表示
         //　　　　出力結果【618】
         private static void Exercise01(List<int> numbers) {
-
+            
 
 
         }
@@ -59,7 +59,7 @@ namespace Test02 {
         //問題４　10以上50以下の数字のみを表示（即時実行でも可とする）
         //　　　　出力結果【12 14 20 40 35 31 17 48】
         private static void Exercise04(List<int> numbers) {
-
+            numbers.Where(n=> n >= 10)||numbers.Where(n=>n<=50).ToList().(Console.WriteLine);
 
 
         }
