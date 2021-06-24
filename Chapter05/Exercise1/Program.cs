@@ -19,16 +19,10 @@ namespace Exercise1 {
             }
 
             //5-2
-            int num;
-            Console.WriteLine("数字文字列を入力");
-            var str = Console.ReadLine();
-            if(int.TryParse(str,out num)) {
-                //変換成功
-                Console.WriteLine("{0} = {1:0,000}", str, num);
-            } else {
-                //失敗
-                Console.WriteLine("変換に失敗");
-            }
+
+
+            //5-3
+
         }
     }
 }
