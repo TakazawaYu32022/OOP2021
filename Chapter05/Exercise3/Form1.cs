@@ -18,6 +18,8 @@ namespace Exercise3 {
         //フォームがロードされるとき、一回だけ実行される
         private void Form1_Load(object sender, EventArgs e) {
             inputStrText.Text = "Jackdaws love my big sphinx of quartz";
+            //問題5_4
+            inputStrData.Text = "Novelist=谷崎潤一郎;BestWork=春琴抄;Born=1886";
 
         }
 
@@ -61,8 +63,26 @@ namespace Exercise3 {
         }
 
         private void Button5_4_Click(object sender, EventArgs e) {
-            var target = "Novelist=谷崎潤一郎;BestWork=春琴抄;Born=1886";
-            var value = "BestWork=";
+            //Novelist=谷崎潤一郎
+            //BestWork=春琴抄
+            //Born=1886
+            foreach (var pair in inputStrData.Text.Split(';')) {
+                var array = pair.Split('=');
+                outputStrData.Text += ToJapanese(array[0]) + ":" + array[1] + Environment.NewLine;//改行
+            }
+        }
+        private string ToJapanese(string key) {
+            switch (key){
+                case "Novelist":
+                    return "作家　 ";
+
+                case "BestWork":
+                    return "代表作";
+
+                case "Born":
+                    return "誕生年";
+            }
+            throw new ArgumentException("引数が正しくありません");
         }
     }
 }

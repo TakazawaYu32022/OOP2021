@@ -37,7 +37,8 @@ namespace Exercise3 {
             this.Button5_3_5 = new System.Windows.Forms.Button();
             this.TextBoxJoinWord = new System.Windows.Forms.TextBox();
             this.Button5_4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.outputStrData = new System.Windows.Forms.TextBox();
+            this.inputStrData = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -157,24 +158,34 @@ namespace Exercise3 {
             this.Button5_4.Name = "Button5_4";
             this.Button5_4.Size = new System.Drawing.Size(87, 39);
             this.Button5_4.TabIndex = 10;
-            this.Button5_4.Text = "出力";
+            this.Button5_4.Text = "問題5_4";
             this.Button5_4.UseVisualStyleBackColor = true;
             this.Button5_4.Click += new System.EventHandler(this.Button5_4_Click);
             // 
-            // textBox1
+            // outputStrData
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(177, 679);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(539, 34);
-            this.textBox1.TabIndex = 11;
+            this.outputStrData.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.outputStrData.Location = new System.Drawing.Point(173, 724);
+            this.outputStrData.Multiline = true;
+            this.outputStrData.Name = "outputStrData";
+            this.outputStrData.Size = new System.Drawing.Size(539, 142);
+            this.outputStrData.TabIndex = 11;
+            // 
+            // inputStrData
+            // 
+            this.inputStrData.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.inputStrData.Location = new System.Drawing.Point(173, 684);
+            this.inputStrData.Name = "inputStrData";
+            this.inputStrData.Size = new System.Drawing.Size(538, 34);
+            this.inputStrData.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 773);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.Controls.Add(this.inputStrData);
+            this.Controls.Add(this.outputStrData);
             this.Controls.Add(this.Button5_4);
             this.Controls.Add(this.TextBoxJoinWord);
             this.Controls.Add(this.Button5_3_5);
@@ -211,7 +222,8 @@ namespace Exercise3 {
         private System.Windows.Forms.Button Button5_3_5;
         private System.Windows.Forms.TextBox TextBoxJoinWord;
         private System.Windows.Forms.Button Button5_4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox outputStrData;
+        private System.Windows.Forms.TextBox inputStrData;
     }
 }
 
