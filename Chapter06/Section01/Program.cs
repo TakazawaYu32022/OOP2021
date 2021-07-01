@@ -14,6 +14,20 @@ namespace Section01 {
             Console.WriteLine("一番高い本は" + books.Max(x => x.Price).ToString("#,0") + "円");
             Console.WriteLine("一番安い本は" + books.Min(x => x.Price).ToString("#,0") + "円");
             Console.WriteLine("500円以上のほんの冊数は" + books.Count(x => x.Price>=500)+ "冊");
+            Console.WriteLine("物語がふくまれている本は" + books.Count(x => x.Title.Contains("物語")) + "です");
+            var bookData = books.Where(x => x.Title.Contains("物語")).Take(2);
+            foreach(var book in bookData) {
+                Console.WriteLine(book.Title);
+            }
+            var output = books.OrderByDescending(x => x.Price).Take(3);
+            foreach(var item in output) {
+                Console.WriteLine(item.Title + " " + item.Price);
+            }
+
+            var titles = books.Select(x => x.Title);
+            foreach(var item in titles) {
+                Console.WriteLine(item);
+            }
         }
     }
 }
