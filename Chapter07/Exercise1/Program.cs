@@ -16,7 +16,7 @@ namespace Exercise1 {
         private static void Exercise1_1(string text) {
             var dict = new Dictionary<Char, int>();
             foreach(var c in text) {
-                //大文字小文字を久場宇しないためすべて大文字に変換して処理
+                //大文字小文字を区別しないためすべて大文字に変換して処理
                 var uc = char.ToUpper(c);
                 if ('A' <= uc && uc <= 'Z') {
                     if (dict.ContainsKey(uc)) {
@@ -27,10 +27,13 @@ namespace Exercise1 {
                 }
             }
             //Aから並べ替えて出力
-            //Console.WriteLine(dict.OrderBy(x=>x))
+            var sorted = dict.OrderBy(x => x.Key);
+            foreach(var a in sorted) {
+                Console.WriteLine("'" + a.Key + "'" + ":" + a.Value);
+            }
         }
         private static void Exercise1_2(string text) {
-            throw new NotImplementedException();
+            //var SortedDictionary = new Dictionary<>
         }
     }
 }
