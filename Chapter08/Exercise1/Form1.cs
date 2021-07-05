@@ -17,7 +17,7 @@ namespace Exercise1 {
         private void btAction_Click(object sender, EventArgs e) {
             //nudはキャストする(int)
             var today = new DateTime((int)nudYear.Value, (int)nudMonth.Value, (int)nudDay.Value);
-            //var today = DateTime.Today;
+            var now = DateTime.Today;
             DayOfWeek dayOfWeek = today.DayOfWeek;
 
             string dow = "";
@@ -63,6 +63,17 @@ namespace Exercise1 {
 
 
             //tbOutput.Text = DateTime.Today.DayOfYear.ToString();
+
+            tbAge.Text = GetAge(dtpDateTime.Value, now).ToString() + "歳";
+
+
+        }
+        public static int GetAge(DateTime birthday, DateTime targetDay ){
+            var age = targetDay.Year - birthday.Year;
+            if (targetDay < birthday.AddYears(age)) {
+                age--;
+            }
+            return age;
         }
     }
 }

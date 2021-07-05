@@ -34,6 +34,8 @@ namespace Exercise1 {
             this.label3 = new System.Windows.Forms.Label();
             this.tbLeapYear = new System.Windows.Forms.TextBox();
             this.tbTotalDay = new System.Windows.Forms.TextBox();
+            this.tbAge = new System.Windows.Forms.TextBox();
+            this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDay)).BeginInit();
@@ -50,7 +52,7 @@ namespace Exercise1 {
             // btAction
             // 
             this.btAction.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btAction.Location = new System.Drawing.Point(539, 282);
+            this.btAction.Location = new System.Drawing.Point(539, 359);
             this.btAction.Name = "btAction";
             this.btAction.Size = new System.Drawing.Size(99, 34);
             this.btAction.TabIndex = 1;
@@ -173,11 +175,27 @@ namespace Exercise1 {
             this.tbTotalDay.Size = new System.Drawing.Size(435, 34);
             this.tbTotalDay.TabIndex = 0;
             // 
+            // tbAge
+            // 
+            this.tbAge.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbAge.Location = new System.Drawing.Point(37, 358);
+            this.tbAge.Name = "tbAge";
+            this.tbAge.Size = new System.Drawing.Size(435, 34);
+            this.tbAge.TabIndex = 0;
+            // 
+            // dtpDateTime
+            // 
+            this.dtpDateTime.Location = new System.Drawing.Point(37, 333);
+            this.dtpDateTime.Name = "dtpDateTime";
+            this.dtpDateTime.Size = new System.Drawing.Size(115, 19);
+            this.dtpDateTime.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 532);
+            this.Controls.Add(this.dtpDateTime);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -185,6 +203,7 @@ namespace Exercise1 {
             this.Controls.Add(this.nudMonth);
             this.Controls.Add(this.nudYear);
             this.Controls.Add(this.btAction);
+            this.Controls.Add(this.tbAge);
             this.Controls.Add(this.tbTotalDay);
             this.Controls.Add(this.tbLeapYear);
             this.Controls.Add(this.tbOutput);
@@ -210,6 +229,8 @@ namespace Exercise1 {
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbLeapYear;
         private System.Windows.Forms.TextBox tbTotalDay;
+        private System.Windows.Forms.TextBox tbAge;
+        private System.Windows.Forms.DateTimePicker dtpDateTime;
     }
 }
 
