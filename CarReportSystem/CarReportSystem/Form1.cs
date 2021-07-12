@@ -86,5 +86,51 @@ namespace CarReportSystem {
         private void rbOther_CheckedChanged(object sender, EventArgs e) {
 
         }
+
+        private void dgvRegistData_CellClick(object sender, DataGridViewCellEventArgs e) {
+            if(e.RowIndex == -1) return; //何も入力していないときの例外処理
+
+            CarReport selectedCar = listCarReport[e.RowIndex];
+            dtpDate.Value = selectedCar.Date;
+            cbAuthor.Text = selectedCar.Author;
+            setMakerRadioButton(selectedCar);
+            cbCarName.Text = selectedCar.CarName;
+            tbReport.Text = selectedCar.Report;
+            pbPicture.Image = selectedCar.Picture;
+
+        }
+
+        private void setMakerRadioButton(CarReport selectedCar) {
+            switch (selectedCar.Maker) {
+                case CarReport.MakerGroup.トヨタ:
+                    rbToyota.Checked = true;
+                    break;
+                case CarReport.MakerGroup.日産:
+                    rbNissan.Checked = true;
+                    break;
+                case CarReport.MakerGroup.ホンダ:
+                    rbHonda.Checked = true;
+                    break;
+                case CarReport.MakerGroup.スバル:
+                    rbSubaru.Checked = true;
+                    break;
+                case CarReport.MakerGroup.外国車:
+                    rbImport.Checked = true;
+                    break;
+                case CarReport.MakerGroup.その他:
+                    rbOther.Checked = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btDataDelete_Click(object sender, EventArgs e) {
+            listCarReport.RemoveAt(dgvRegistData.CurrentRow.Index);
+        }
+
+        private void btDataCorrect_Click(object sender, EventArgs e) {
+            listCarReport[dgvRegistData.CurrentRow.Index].UpDate(dtpDate.Value,cbAuthor.Text,selectedGroup(),cbCarName.Text,tbReport.Text,pbPicture.Image);
+        }
     }
 }

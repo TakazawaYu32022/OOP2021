@@ -14,15 +14,15 @@ namespace CarReportSystem {
         public string Report { get; set; }  //レポート
         public Image Picture { get; set; } //画像
 
-        //引数付コンストラクタ
-       /* public CarReport(DateTime date,string auther,MakerGroup maker,string carname,string report,Image picure){
+        //データ更新用
+        public void UpDate(DateTime date,string auther,MakerGroup maker,string carname,string report,Image picure){
             this.Date = date;
-            this.Auther = auther;
+            this.Author = auther;
             this.Maker = maker;
             this.CarName = carname;
             this.Report = report;
             this.Picture = picure;
-        }*/
+        }
 
 
         //メーカー
