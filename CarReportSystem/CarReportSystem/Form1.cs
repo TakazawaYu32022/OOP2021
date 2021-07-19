@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -131,6 +133,58 @@ namespace CarReportSystem {
 
         private void btDataCorrect_Click(object sender, EventArgs e) {
             listCarReport[dgvRegistData.CurrentRow.Index].UpDate(dtpDate.Value,cbAuthor.Text,selectedGroup(),cbCarName.Text,tbReport.Text,pbPicture.Image);
+            dgvRegistData.Refresh();//コントロールの強制再描画
+        }
+
+        private void btSave_Click(object sender, EventArgs e){
+            if(sfdFileSave.ShowDialog()== DialogResult.OK){
+                try{
+                    //バイナリ形式で、シリアル化
+                    BinaryFormatter bf = new BinaryFormatter();
+
+                    using (FileStream fs = File.Open(sfdFileSave.FileName, FileMode.Create)){
+                        bf.Serialize(fs, listCarReport);
+                    }
+                }
+                catch(Exception ex){
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        private void btOpen_Click(object sender, EventArgs e){
+            if (ofdFileOpen.ShowDialog() == DialogResult.OK){
+                try{
+                    //逆バイナリ形式で、逆シリアル化
+                    var bf = new BinaryFormatter();
+
+                    using (FileStream fs = File.Open(ofdFileOpen.FileName, FileMode.Open, FileAccess.Read)){
+                        //逆シリアル化して読み込む
+                        listCarReport = (BindingList<CarReport>)bf.Deserialize(fs);
+                        dgvRegistData.DataSource = null;
+                        dgvRegistData.DataSource = listCarReport;
+                    }
+                }
+                catch(Exception ex){
+                    MessageBox.Show(ex.Message);
+                }
+                
+                //読み込んだデータを各コンボボックスに登録する
+                foreach(var item in listCarReport){
+                    setCbAuthor(item.Author);
+                    setCbCarName(item.CarName);
+
+                }
+                /*for(int i=0; i < dgvRegistData.RowCount; i++){
+                    setCbAuthor(dgvRegistData.Rows[i].Cells[1].Value.ToString());
+                    setCbCarName(dgvRegistData.Rows[i].Cells[3].Value.ToString());
+                }*/
+            }
+        }
+
+        private void fmMain_Load(object sender, EventArgs e){
+            dgvRegistData.Columns[5].Visible = false;
         }
     }
 }
