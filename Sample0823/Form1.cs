@@ -23,13 +23,15 @@ namespace Sample0823
         {
             int num1 = int.Parse(Value.Text);
             int num2 = int.Parse(Jyou.Text);
-            int num3 = int.Parse(Value.Text);
+
+            Result.Text = (Math.Pow(num1,num2)).ToString();
+            /*int num3 = int.Parse(Value.Text);
             
             for (int i = 1;i< num2; i++) {
                 num3 = num3 * num1;
                 
             }
-            Result.Text = num3.ToString();
+            Result.Text = num3.ToString();*/
         }
     }
 }
