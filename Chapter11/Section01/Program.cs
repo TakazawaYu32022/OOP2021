@@ -11,21 +11,32 @@ namespace Section01
     {
         static void Main(string[] args)
         {
-            var xdoc = XDocument.Load("novelists.xml");//xdocで全体を取得
-            var xtitles = xdoc.Root.Descendants("title");
+            var novelists = ReadNovelists();
 
-            foreach (var xtitle in xtitles)
+            foreach (var novelist in novelists)
             {
-                Console.WriteLine(xtitle.Value);
+                Console.WriteLine("{0} ({1}-{2}) - {3}",
+                                   novelist.Name,novelist.Birth.Year,novelist.Death.Year,
+                                   string.Join(",",novelist.MasterPieces));
             }
+        }
 
-            /*var xelements = xdoc.Root.Elements();
-            foreach(var xnovelist in xelements)
-            {
-                var xname = xnovelist.Element("name");
-                var xbirth = xnovelist.Element("birth");
-                Console.WriteLine("{0} {1}",xname.Value,xbirth.Value);
-            }*/
+        static public IEnumerable<Novelist> ReadNovelists()
+        {
+            var xdoc = XDocument.Load("novelists.xml");//xdocで全体を取得
+            var novelists = xdoc.Root.Elements()
+                                .Select(x => new Novelist
+                                {
+                                    Name = (string)x.Element("name"),
+                                    KanaName = (string)(x.Element("name").Attribute("kana")),
+                                    Birth = (DateTime)x.Element("birth"),
+                                    Death = (DateTime)x.Element("death"),
+                                    MasterPieces = x.Element("masterpieces")
+                                                    .Elements("title")
+                                                    .Select(title=>title.Value)
+                                                    .ToArray()//MasterPiecesからSelectまで
+                                });
+            return novelists.ToArray();//new Novelistの{}全体
         }
     }
 }
