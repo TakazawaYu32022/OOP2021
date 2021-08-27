@@ -23,7 +23,7 @@ namespace Section01
 
         static public IEnumerable<Novelist> ReadNovelists()
         {
-            var xdoc = XDocument.Load("novelists.xml");//xdocで全体を取得
+            var xdoc = XDocument.Load("novelists.xml");//XMLファイルのロード
             var novelists = xdoc.Root.Elements()
                                 .Select(x => new Novelist
                                 {

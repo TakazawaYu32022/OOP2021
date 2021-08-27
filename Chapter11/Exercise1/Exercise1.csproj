@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB1C78F7-D83E-453D-B297-C7D56F7EC221}</ProjectGuid>
+    <ProjectGuid>{F4E095A0-2D8D-4088-9773-A27FB41CFC50}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Section01</RootNamespace>
-    <AssemblyName>Section01</AssemblyName>
+    <RootNamespace>Exercise1</RootNamespace>
+    <AssemblyName>Exercise1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Novelist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="novelists.xml">
+    <Content Include="Sample.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
