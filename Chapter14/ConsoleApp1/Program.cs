@@ -20,9 +20,30 @@ namespace Section04
 
         public Program()
         {
+            int areacode = 0;
+            Console.WriteLine("地域コードを入力");
+             areacode = int.Parse(Console.ReadLine());
+            if (areacode == 1)
+            {
+                areacode = 4210;//前橋
+            } else if(areacode == 2)
+            {
+                areacode = 4220;//みなかみ
+            }else if(areacode == 3)
+            {
+                areacode = 4110;//宇都宮
+            }else if(areacode == 4)
+            {
+                areacode = 4010;//水戸
+            }else if(areacode == 9)
+            {
+                Console.WriteLine("直接地域コードを入力");//その他
+                areacode = int.Parse(Console.ReadLine());
+            }
+            
             //DownloadString();
             //DownloadFileAsync();
-            var results = GetWeatherReportFromYahoo(4610);
+            var results = GetWeatherReportFromYahoo(areacode);
             foreach(var s in results)
             {
                 Console.WriteLine(s);
