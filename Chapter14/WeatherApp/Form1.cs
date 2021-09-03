@@ -45,7 +45,7 @@ namespace WeatherApp
             var results = GetWeatherReportFromYahoo(areacode);
             foreach (var s in results)
             {
-                RSSreader.Text += s;
+                tbRSS.Text += s;
             }
             
             Console.ReadLine();//入力待ち

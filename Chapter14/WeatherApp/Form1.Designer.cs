@@ -32,7 +32,7 @@ namespace WeatherApp
             this.label1 = new System.Windows.Forms.Label();
             this.cbArea = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.RSSreader = new System.Windows.Forms.TextBox();
+            this.tbRSS = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -70,21 +70,21 @@ namespace WeatherApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // RSSreader
+            // tbRSS
             // 
-            this.RSSreader.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.RSSreader.Location = new System.Drawing.Point(18, 110);
-            this.RSSreader.Multiline = true;
-            this.RSSreader.Name = "RSSreader";
-            this.RSSreader.Size = new System.Drawing.Size(558, 404);
-            this.RSSreader.TabIndex = 3;
+            this.tbRSS.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbRSS.Location = new System.Drawing.Point(18, 110);
+            this.tbRSS.Multiline = true;
+            this.tbRSS.Name = "tbRSS";
+            this.tbRSS.Size = new System.Drawing.Size(558, 404);
+            this.tbRSS.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 576);
-            this.Controls.Add(this.RSSreader);
+            this.Controls.Add(this.tbRSS);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbArea);
             this.Controls.Add(this.label1);
@@ -100,7 +100,7 @@ namespace WeatherApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbArea;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox RSSreader;
+        private System.Windows.Forms.TextBox tbRSS;
     }
 }
 
