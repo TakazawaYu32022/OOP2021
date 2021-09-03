@@ -22,7 +22,12 @@ namespace Section04
         {
             int areacode = 0;
             Console.WriteLine("地域コードを入力");
-             areacode = int.Parse(Console.ReadLine());
+            Console.WriteLine("1.前橋");
+            Console.WriteLine("2.みなかみ");
+            Console.WriteLine("3.宇都宮");
+            Console.WriteLine("4.水戸");
+            Console.WriteLine("9.その他(直接入力)");
+            areacode = int.Parse(Console.ReadLine());
             if (areacode == 1)
             {
                 areacode = 4210;//前橋
