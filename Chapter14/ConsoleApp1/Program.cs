@@ -12,6 +12,12 @@ namespace Section04
 {
     class Program
     {
+        Dictionary<string, int> AreaDic = new Dictionary<string, int>()
+        {
+            {"前橋",4210 },{"みなかみ",4220},{"宇都宮",4110},{"水戸",4010},
+        };
+
+        List<int> cityCode = new List<int>();
 
         static void Main(string[] args)
         {
@@ -20,9 +26,40 @@ namespace Section04
 
         public Program()
         {
-            int areacode = 0;
+            //int areacode = 0;
+            Console.WriteLine("yahoo!週間天気予報");
+            Console.WriteLine();//改行
             Console.WriteLine("地域コードを入力");
-            Console.WriteLine("1.前橋");
+
+            //模範解答のプログラム
+            int num = 1;
+            foreach(KeyValuePair<string,int>pair in AreaDic)
+            {
+                Console.WriteLine("{0}:{1}", num++, pair.Key);
+                cityCode.Add(pair.Value);//コードをリストへ保存
+                Console.WriteLine();
+            }
+            Console.WriteLine("9.その他(直接入力)");
+            Console.WriteLine();
+            Console.Write(">");
+            var selectArea = Console.ReadLine();
+            int pos = int.Parse(selectArea);
+            int code;
+            if(pos != 9)
+            {
+                code = cityCode[pos - 1];
+            }
+            else
+            {
+                //その他の場合
+                Console.Write("都市コードを入力：");
+                code = int.Parse(Console.ReadLine());
+            }
+
+            var results = GetWeatherReportFromYahoo(code);
+            
+
+            /*Console.WriteLine("1.前橋");
             Console.WriteLine("2.みなかみ");
             Console.WriteLine("3.宇都宮");
             Console.WriteLine("4.水戸");
@@ -44,11 +81,13 @@ namespace Section04
             {
                 Console.WriteLine("直接地域コードを入力");//その他
                 areacode = int.Parse(Console.ReadLine());
-            }
-            
+            }*/
+
             //DownloadString();
             //DownloadFileAsync();
-            var results = GetWeatherReportFromYahoo(areacode);
+            //var results = GetWeatherReportFromYahoo(areacode);
+
+            //模範解答と共通してるプログラム
             foreach(var s in results)
             {
                 Console.WriteLine(s);
