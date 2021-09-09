@@ -16,9 +16,11 @@ namespace RssReader
 {
     public partial class Form1 : Form
     {
+        List<string> link = new List<string>();
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,9 +41,20 @@ namespace RssReader
             var nodes = xdoc.Root.Descendants("title");
             foreach(var node in nodes)
             {
-                lbTitles.Items.Add(node);
+                string s = Regex.Replace(node.Value, "Yahoo!ニュース・トピックス - 国内| - ", "");
+                lbTitles.Items.Add(s);
+            }
+            foreach(var a in nodes)
+            {
+                link = lbTitles.SelectedIndex;
+                wbBrowser.Url = ;
             }
             
+
+        }
+
+        private void lbTitles_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
             
         }
     }
