@@ -62,7 +62,7 @@ namespace RssReader
             this.lbTitles.Name = "lbTitles";
             this.lbTitles.Size = new System.Drawing.Size(317, 508);
             this.lbTitles.TabIndex = 2;
-            this.lbTitles.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbTitles_MouseDoubleClick);
+            this.lbTitles.Click += new System.EventHandler(this.lbTitles_Click);
             // 
             // wbBrowser
             // 

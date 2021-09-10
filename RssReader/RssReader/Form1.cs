@@ -16,7 +16,8 @@ namespace RssReader
 {
     public partial class Form1 : Form
     {
-        List<string> link = new List<string>();
+        IEnumerable<ItemData> items = null;
+        //List<string> link = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -32,30 +33,36 @@ namespace RssReader
         private void setRssTitle(string uri)
         {
 
-            var wc = new WebClient();
-            wc.Headers.Add("Content-type", "charset=UTF-8");
-            var uriString = string.Format(uri);
-            var url = new Uri(uriString);
-            var stream = wc.OpenRead(url);
-            XDocument xdoc = XDocument.Load(stream);
-            var nodes = xdoc.Root.Descendants("title");
-            foreach(var node in nodes)
+            using (var wc = new WebClient())
             {
-                string s = Regex.Replace(node.Value, "Yahoo!ニュース・トピックス - 国内| - ", "");
-                lbTitles.Items.Add(s);
-            }
-            foreach(var a in nodes)
-            {
-                link = lbTitles.SelectedIndex;
-                wbBrowser.Url = ;
+                wc.Headers.Add("Content-type", "charset=UTF-8");
+                var stream = wc.OpenRead(uri);
+                XDocument xdoc = XDocument.Load(stream);
+                items = xdoc.Root.Descendants("item").Select(x => new ItemData
+                {
+                    Title = (string)x.Element("title"),
+                    Link = (string)x.Element("link"),
+                    PubDate = (DateTime)x.Element("pubDate"),
+                    Description = (string)x.Element("description")
+                });
+                foreach (var item in items)
+                {
+                    lbTitles.Items.Add(item.Title);
+                    //link.Add(item.Link);
+
+                    /*lbTitles.Items.Add(item.Element("title").Value);
+                    link.Add(item.Element("link").Value);*/
+
+                }
             }
             
 
         }
 
-        private void lbTitles_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void lbTitles_Click(object sender, EventArgs e)
         {
-            
+            string link = (items.ToArray())[lbTitles.SelectedIndex].Link;
+            wbBrowser.Url = new Uri(link);
         }
     }
 }
