@@ -49,11 +49,8 @@ namespace Exercise2 {
             if (sfdSaveFile.ShowDialog() == DialogResult.OK) {
                 outputPath = sfdSaveFile.FileName;
                 var lines = new[] { inputPath };
-                using(var writer = new StreamWriter(outputPath, append: true)) {
-                    foreach(var line in lines) {
-                        writer.WriteLine(line);
-                    }
-                }
+                File.WriteAllLines(outputPath, lines);
+
             }
         }
     }
