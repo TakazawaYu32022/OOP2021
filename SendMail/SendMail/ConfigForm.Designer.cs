@@ -203,7 +203,7 @@ namespace SendMail
             this.btApply.TabIndex = 2;
             this.btApply.Text = "適用";
             this.btApply.UseVisualStyleBackColor = true;
-            this.btApply.Click += new System.EventHandler(this.btOk_Click);
+            this.btApply.Click += new System.EventHandler(this.btApply_Click);
             // 
             // btCancel
             // 
@@ -213,7 +213,7 @@ namespace SendMail
             this.btCancel.TabIndex = 2;
             this.btCancel.Text = "キャンセル";
             this.btCancel.UseVisualStyleBackColor = true;
-            this.btCancel.Click += new System.EventHandler(this.btOk_Click);
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // ConfigForm
             // 
