@@ -44,7 +44,7 @@ namespace SendMail
         }
         public string sPass()
         {
-            return "Infosys2019";//パスワード
+            return "Infosys2021";//パスワード
         }
         public bool cbSsl()
         {
