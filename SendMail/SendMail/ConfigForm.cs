@@ -33,29 +33,12 @@ namespace SendMail
         private void btOk_Click(object sender, EventArgs e)
         {
             SettingRegist();
-            //XMLファイルへ書き出し(シリアル化)
-            var xws = new XmlWriterSettings
-            {
-                Encoding = new System.Text.UTF8Encoding(false),
-                Indent = true,
-                IndentChars = "   ",
-            };
-
-            using (var writer = XmlWriter.Create("mailsetting.xml", xws))
-            {
-                var serializer = new DataContractSerializer(s.GetType());
-                serializer.WriteObject(writer, s);
-            }
-                this.Close();
+            
         }
 
         private void SettingRegist()
         {
-            s.Port = int.Parse(tbPort.Text);
-            s.Host = tbHost.Text;
-            s.MailAddr = tbUserName.Text;
-            s.Pass = tbPass.Text;
-            s.Ssl = cbSsl.Checked;
+            
             
         }
 

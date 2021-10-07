@@ -95,7 +95,7 @@ namespace SendMail
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (File.Exists(@"mailsetting.xml"))
+            /*if (File.Exists(@"mailsetting.xml"))
             {
                 //XMLファイルを読み込み(逆シリアル化)【P303参照】
                 using (var reader = XmlReader.Create("mailsetting.xml"))
@@ -112,7 +112,7 @@ namespace SendMail
             else
             {
                 configform.ShowDialog();
-            }
+            }*/
 
         }
     }
