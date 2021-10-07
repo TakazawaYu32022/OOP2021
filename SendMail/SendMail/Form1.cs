@@ -67,14 +67,13 @@ namespace SendMail
                 string userState = "SendMail";
                 smtpClient.SendAsync(mailMessage, userState);
 
-                /*smtpClient.Send(mailMessage);
 
-                MessageBox.Show("送信完了");*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void SmtpClient_SendCompleted(object sender,AsyncCompletedEventArgs e)
@@ -98,6 +97,7 @@ namespace SendMail
         {
             if (File.Exists(@"mailsetting.xml"))
             {
+                //XMLファイルを読み込み(逆シリアル化)【P303参照】
                 using (var reader = XmlReader.Create("mailsetting.xml"))
                 {
                     var serializer = new DataContractSerializer(typeof(Settings));

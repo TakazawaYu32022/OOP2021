@@ -22,13 +22,18 @@ namespace SendMail
 
         private void ConfigForm_Load(object sender, EventArgs e)
         {
-
+            tbHost.Text = s.Host;
+            tbPort.Text = s.Port.ToString();
+            tbUserName.Text = s.MailAddr;
+            tbPass.Text = s.Pass;
+            cbSsl.Checked = s.Ssl;
+            tbSender.Text = s.MailAddr;
         }
 
         private void btOk_Click(object sender, EventArgs e)
         {
             SettingRegist();
-            //シリアル化
+            //XMLファイルへ書き出し(シリアル化)
             var xws = new XmlWriterSettings
             {
                 Encoding = new System.Text.UTF8Encoding(false),
