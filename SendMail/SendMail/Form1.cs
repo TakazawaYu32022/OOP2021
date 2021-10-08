@@ -21,6 +21,7 @@ namespace SendMail
         ConfigForm configform = new ConfigForm();
         //設定情報
         private Settings s = Settings.getInstance();
+        string err;
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +34,32 @@ namespace SendMail
                 MessageBox.Show("送信情報を設定してください");
                 return;
             }
+
+            
+
+
+            if (String.IsNullOrEmpty(tbTo.Text) == true)
+            {
+                err += "アドレスを入力してください";
+                
+            }
+
+            if (String.IsNullOrEmpty(tbMessage.Text) == true)
+            {
+                if (String.IsNullOrEmpty(err) == false)
+                {
+                    err += Environment.NewLine;
+                }
+                err += "本文が未入力です";
+                
+
+            }
+
+            if (String.IsNullOrEmpty(err))
+            {
+                
+            }
+
             try
             {
                 //メール送信のためのインスタンスを生成
@@ -68,15 +95,27 @@ namespace SendMail
                 smtpClient.EnableSsl = s.Ssl;
 
                 //送信完了時に呼ばれるイベントハンドラの登録
-                smtpClient.SendCompleted += SmtpClient_SendCompleted;
-                string userState = "SendMail";
-                smtpClient.SendAsync(mailMessage, userState);
+                
+                if(tbMessage.Text == "")
+                {
+                    MessageBox.Show(err);
+                    return;
+                }
+                else
+                {
+                    smtpClient.SendCompleted += SmtpClient_SendCompleted;
+                    string userState = "SendMail";
+                    smtpClient.SendAsync(mailMessage, userState);
+                }
+                //smtpClient.SendAsync(mailMessage, userState);
 
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(err);
+                
+                //MessageBox.Show(ex.Message);
             }
             
         }
@@ -89,6 +128,11 @@ namespace SendMail
             }
             else
             {
+                tbTo.Text = null;
+                tbCc.Text = null;
+                tbBcc.Text = null;
+                tbTitle.Text = null;
+                tbMessage.Text = null;
                 MessageBox.Show("送信完了");
             }
         }
@@ -125,6 +169,20 @@ namespace SendMail
                 configform.ShowDialog();
             }*/
 
+        }
+
+        private void 新規作成NToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tbTo.Text = null;
+            tbCc.Text = null;
+            tbBcc.Text = null;
+            tbTitle.Text = null;
+            tbMessage.Text = null;
+        }
+
+        private void 終了XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
