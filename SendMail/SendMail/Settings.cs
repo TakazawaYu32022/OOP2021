@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -12,6 +13,9 @@ namespace SendMail
     public class Settings
     {
         private static Settings instance = null;
+
+        //送信データ設定済み
+        public　static bool Ready { get; private set; } = true;
 
         public int Port { get; set; }//ポート番号
         public string Host { get; set; }//ホスト名
@@ -32,24 +36,30 @@ namespace SendMail
             {
                 instance = new Settings();
 
-
-                //XMLファイルを読み込み(逆シリアル化)【P303参照】
-                using (var reader = XmlReader.Create("mailsetting.xml"))
+                try { 
+                    //XMLファイルを読み込み(逆シリアル化)【P303参照】
+                    using (var reader = XmlReader.Create("mailsetting.xml"))
+                    {
+                        var serializer = new DataContractSerializer(typeof(Settings));
+                        var set = serializer.ReadObject(reader) as Settings;
+                        instance.Port = set.Port;
+                        instance.Host = set.Host;
+                        instance.MailAddr = set.MailAddr;
+                        instance.Pass = set.Pass;
+                        instance.Ssl = set.Ssl;
+                    }
+                }
+                //ファイルがない場合(初回起動時)
+                catch(Exception ex)
                 {
-                    var serializer = new DataContractSerializer(typeof(Settings));
-                    var set = serializer.ReadObject(reader) as Settings;
-                    instance.Port = set.Port;
-                    instance.Host = set.Host;
-                    instance.MailAddr = set.MailAddr;
-                    instance.Pass = set.Pass;
-                    instance.Ssl = set.Ssl;
+                    Ready = false;//データ未設定
                 }
             }
                 return instance;
         }
 
         //送信データ登録
-        public void setSendConfig(string host,int port,string mailAddr,string pass,bool ssl)
+        public bool setSendConfig(string host,int port,string mailAddr,string pass,bool ssl)
         {
             Port = port;
             Host = host;
@@ -70,6 +80,10 @@ namespace SendMail
                 var serializer = new DataContractSerializer(this.GetType());
                 serializer.WriteObject(writer, this);
             }
+
+            Ready = true;
+
+            return true;//登録完了
         }
 
         //初期値

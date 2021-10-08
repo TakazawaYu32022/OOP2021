@@ -28,6 +28,11 @@ namespace SendMail
 
         private void btSend_Click(object sender, EventArgs e)
         {
+            if (!Settings.Ready)
+            {
+                MessageBox.Show("送信情報を設定してください");
+                return;
+            }
             try
             {
                 //メール送信のためのインスタンスを生成
@@ -95,6 +100,12 @@ namespace SendMail
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //起動時に送信情報が未設定の場合、設定画面を表示する
+            if (!Settings.Ready)
+            {
+                configform.ShowDialog();
+            }
+
             /*if (File.Exists(@"mailsetting.xml"))
             {
                 //XMLファイルを読み込み(逆シリアル化)【P303参照】
