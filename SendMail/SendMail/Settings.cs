@@ -28,14 +28,11 @@ namespace SendMail
         //インスタンスの取得
         public static Settings getInstance()
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = new Settings();
-            }
-            return instance;
 
-            if (File.Exists(@"mailsetting.xml"))
-            {
+
                 //XMLファイルを読み込み(逆シリアル化)【P303参照】
                 using (var reader = XmlReader.Create("mailsetting.xml"))
                 {
@@ -48,11 +45,7 @@ namespace SendMail
                     instance.Ssl = set.Ssl;
                 }
             }
-            /*else
-            {
-                Form1.configform.ShowDialog();
-            }*/
-            return instance;
+                return instance;
         }
 
         //送信データ登録
@@ -64,7 +57,7 @@ namespace SendMail
             Pass = pass;
             Ssl = ssl;
 
-            //XMLファイルへ書き出し(シリアル化)
+            //XMLファイルへ書き出し(シリアル化)【P302参照】
             var xws = new XmlWriterSettings
             {
                 Encoding = new System.Text.UTF8Encoding(false),
@@ -100,5 +93,6 @@ namespace SendMail
         {
             return true;
         }
+
     }
 }

@@ -32,15 +32,14 @@ namespace SendMail
 
         private void btOk_Click(object sender, EventArgs e)
         {
-            SettingRegist();
+            //Settingオブジェクトに入力データを渡して登録を行う
+            //s.setSendConfig(tbHost.Text, int.Parse(tbPort.Text), tbUserName.Text, tbPass.Text, cbSsl.Checked);
+            //SettingRegist();
+            btApply_Click(sender, e);//適用ボタンの処理を呼び出し。
+            this.Close();
             
         }
 
-        private void SettingRegist()
-        {
-            
-            
-        }
 
         private void btCancel_Click(object sender, EventArgs e)
         {
@@ -49,7 +48,8 @@ namespace SendMail
 
         private void btApply_Click(object sender, EventArgs e)
         {
-            SettingRegist();//送信データ登録
+            //Settingオブジェクトに入力データを渡して登録を行う
+            s.setSendConfig(tbHost.Text, int.Parse(tbPort.Text), tbUserName.Text, tbPass.Text, cbSsl.Checked);
         }
 
         private void btDefault_Click(object sender, EventArgs e)
