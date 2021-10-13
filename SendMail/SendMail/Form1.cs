@@ -29,6 +29,7 @@ namespace SendMail
 
         private void btSend_Click(object sender, EventArgs e)
         {
+            btSend.Enabled = false;
             if (!Settings.Ready)
             {
                 MessageBox.Show("送信情報を設定してください");
@@ -99,13 +100,24 @@ namespace SendMail
                 if(tbMessage.Text == "")
                 {
                     MessageBox.Show(err);
+                    btSend.Enabled = true;
                     return;
+                    
+                }
+                else if(tbMessage.Text == " ")
+                {
+                    MessageBox.Show("本文が未入力です");
+                    btSend.Enabled = true;
+                    return;
+                    
                 }
                 else
                 {
+                    
                     smtpClient.SendCompleted += SmtpClient_SendCompleted;
                     string userState = "SendMail";
                     smtpClient.SendAsync(mailMessage, userState);
+                    btSend.Enabled = true;
                 }
                 //smtpClient.SendAsync(mailMessage, userState);
 
@@ -125,6 +137,7 @@ namespace SendMail
             if(e.Error != null)
             {
                 MessageBox.Show(e.Error.Message);
+
             }
             else
             {
