@@ -14,6 +14,18 @@ namespace SampleEntityFramework
         {
             using(var db = new BooksDbContext())
             {
+                Console.WriteLine("#1.1");
+                Exercise13_1_1();
+                Console.WriteLine("#1.2");
+                Exercise13_1_2();
+                Console.WriteLine("#1.3");
+                Exercise13_1_3();
+                Console.WriteLine("#1.4");
+                Exercise13_1_4();
+                /*Console.WriteLine("#1.5");
+                Exercise13_1_5();*/
+
+                Console.ReadLine();//F5で実行してもすぐきえないように
                 db.Database.Log = sql => { Debug.Write(sql); };
                 var count = db.Books.Count();
                 Console.WriteLine(count);
@@ -64,6 +76,46 @@ namespace SampleEntityFramework
             }
             Console.ReadLine();
         }
+
+        private static void Exercise13_1_1()
+        {
+            //AddAuthors();
+            //AddBooks();
+        }
+
+        private static void Exercise13_1_2()
+        {
+            using(var db = new BooksDbContext())
+            {
+                foreach (var infomation in db.Books)
+                {
+                    Console.WriteLine($"{infomation.Title}" + $" " + $" {infomation.PublishedYear}" +
+                        $" " + $"{infomation.Author.Name}" + $"(" + $"{infomation.Author.Birthday.ToString("yyyy/MM/dd")}" + $")");
+                }
+            }
+            
+            Console.ReadLine();
+        }
+
+        private static void Exercise13_1_3()
+        {
+            using (var db = new BooksDbContext())
+            {
+                var MaxTitle = db.Books.Where(a => a.Title.Length == db.Books.Max(x => x.Title.Length)).First();
+                Console.WriteLine($"{MaxTitle.Title}");
+            }
+            Console.ReadLine();
+        }
+
+        private static void Exercise13_1_4()
+        {
+            
+        }
+
+        /*private static void Exercise13_1_5()
+        {
+            throw new NotImplementedException();
+        }*/
 
         private static void DeleteBook()
         {
@@ -132,8 +184,7 @@ namespace SampleEntityFramework
         {
             using(var db = new BooksDbContext())
             {
-                return db.Books.Where(book=>book.Author.Name.StartsWith("夏目")).ToList();
-
+                return db.Books.ToList();
             }
         }
 
