@@ -22,8 +22,8 @@ namespace SampleEntityFramework
                 Exercise13_1_3();
                 Console.WriteLine("#1.4");
                 Exercise13_1_4();
-                /*Console.WriteLine("#1.5");
-                Exercise13_1_5();*/
+                Console.WriteLine("#1.5");
+                Exercise13_1_5();
 
                 Console.ReadLine();//F5で実行してもすぐきえないように
                 db.Database.Log = sql => { Debug.Write(sql); };
@@ -109,13 +109,32 @@ namespace SampleEntityFramework
 
         private static void Exercise13_1_4()
         {
-            
+            using (var db = new BooksDbContext())
+            {
+                var books = db.Books.OrderBy(b => b.PublishedYear).Take(3);
+                foreach(var book in books)
+                {
+                    Console.WriteLine($"{book.Title}" + $" " + $"{book.Author.Name}");
+                }
+            }
         }
 
-        /*private static void Exercise13_1_5()
+        private static void Exercise13_1_5()
         {
-            throw new NotImplementedException();
-        }*/
+            using(var db = new BooksDbContext())
+            {
+                var authors = db.Authors.OrderByDescending(a => a.Birthday);
+                foreach(var author in authors)
+                {
+                    Console.WriteLine("{0}{1:yyyy/MM}", author.Name, author.Birthday);
+                    foreach(var book in author.Books)
+                    {
+                        Console.WriteLine(" {0}{1}", book.Title, book.PublishedYear,
+                                         book.Author.Name, book.Author.Birthday);
+                    }
+                }
+            }
+        }
 
         private static void DeleteBook()
         {
@@ -189,7 +208,7 @@ namespace SampleEntityFramework
         }
 
         //List13-8
-        static void DisplayAllBooks()
+        /*static void DisplayAllBooks()
         {
             var books = GetBooks();
             foreach (var book in books)
@@ -197,7 +216,7 @@ namespace SampleEntityFramework
                 Console.WriteLine($"{book.Title}{book.PublishedYear}");
             }
             Console.ReadLine();//F5で実行したとき、一時停止させる
-        }
+        }*/
 
         // List 13-9
         private static void AddAuthors()
