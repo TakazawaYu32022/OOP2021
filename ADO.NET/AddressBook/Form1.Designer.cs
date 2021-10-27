@@ -198,7 +198,7 @@ namespace AddressBook
             this.dtpBirthSearch.Name = "dtpBirthSearch";
             this.dtpBirthSearch.Size = new System.Drawing.Size(140, 19);
             this.dtpBirthSearch.TabIndex = 11;
-            this.dtpBirthSearch.Value = new System.DateTime(2021, 10, 22, 0, 0, 0, 0);
+            this.dtpBirthSearch.Value = new System.DateTime(2021, 10, 27, 14, 10, 12, 0);
             // 
             // dataGridViewTextBoxColumn1
             // 

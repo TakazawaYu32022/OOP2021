@@ -942,7 +942,7 @@ SELECT No, Name, Birthday, Telephone, Memo FROM Person WHERE (No = @No)";
             this._commandCollection[1].CommandText = "SELECT                      No, Name, Birthday, Telephone, Memo\r\nFROM            " +
                 "             Person\r\nWHERE                       (Birthday = @birthday)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT                      No, Name, Birthday, Telephone, Memo\r\nFROM            " +
@@ -980,13 +980,13 @@ SELECT No, Name, Birthday, Telephone, Memo FROM Person WHERE (No = @No)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByBirthday(infosys202106DataSet.PersonDataTable dataTable, global::System.Nullable<global::System.DateTime> birthday) {
+        public virtual int FillByBirthday(infosys202106DataSet.PersonDataTable dataTable, string birthday) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((birthday.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(birthday.Value));
+            if ((birthday == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(birthday));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -999,13 +999,13 @@ SELECT No, Name, Birthday, Telephone, Memo FROM Person WHERE (No = @No)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual infosys202106DataSet.PersonDataTable GetDataBy1(global::System.Nullable<global::System.DateTime> birthday) {
+        public virtual infosys202106DataSet.PersonDataTable GetDataBy1(string birthday) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((birthday.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(birthday.Value));
+            if ((birthday == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(birthday));
             }
             infosys202106DataSet.PersonDataTable dataTable = new infosys202106DataSet.PersonDataTable();
             this.Adapter.Fill(dataTable);
