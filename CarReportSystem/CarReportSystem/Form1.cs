@@ -145,7 +145,7 @@ namespace CarReportSystem {
             carReportDataGridView.Columns[3].HeaderText = "メーカー";
             carReportDataGridView.Columns[4].HeaderText = "車名";
             carReportDataGridView.Columns[5].HeaderText = "メモ";
-            carReportDataGridView.Columns[6].HeaderText = "画像";
+            carReportDataGridView.Columns[6].Visible = false;//車の画像は表示しない
         }
 
         private void carReportBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -170,9 +170,13 @@ namespace CarReportSystem {
                 tbReport.Text = carReportDataGridView.CurrentRow.Cells[5].Value.ToString();//レポート
                 pbPicture.Image = ByteArrayToImage((byte[])carReportDataGridView.CurrentRow.Cells[6].Value);//画像
             }
-            catch (Exception)
+            catch (InvalidCastException)//変換できなかったときのエラー
             {
                 pbPicture.Image = null;
+            }
+            catch (Exception ex)//全体のエラー
+            {
+                MessageBox.Show(ex.Message);
             }
             
             
@@ -183,8 +187,13 @@ namespace CarReportSystem {
         // バイト配列をImageオブジェクトに変換
         public static Image ByteArrayToImage(byte[] b)
         {
-            ImageConverter imgconv = new ImageConverter();
-            Image img = (Image)imgconv.ConvertFrom(b);
+            Image img = null;
+            if(b.Length > 0)
+            {
+                ImageConverter imgconv = new ImageConverter();
+                img = (Image)imgconv.ConvertFrom(b);
+
+            }      
             return img;
         }
         // Imageオブジェクトをバイト配列に変換
@@ -207,6 +216,7 @@ namespace CarReportSystem {
             rbOther.Checked = true;
             cbCarName.Text = "";
             tbReport.Text = "";
+            pbPicture.Image = null;
 
         }
     }
