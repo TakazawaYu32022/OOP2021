@@ -27,8 +27,18 @@ namespace SampleApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            btHello.Content = "ぼたんがおされました";
+            
             //MessageBox.Show("ボタンが押されました。");
+        }
+
+        private void okButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(string.Format("入力された文字は「{0}」です。",MessageTextBox.Text));
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("キャンセルされました。");
         }
     }
 }
