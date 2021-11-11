@@ -22,9 +22,9 @@ namespace SampleUnitConverter
         public ICommand MetricToImperialUnit { get; private set; }
 
         //上のComboBoxで選択されている値
-        //public MetricUnit CurrentMetricUnit { get; set; }
+        public MetricUnit CurrentMetricUnit { get; set; }
         //下のComboBoxで選択されている値
-        //public ImperialUnit CurrentImperialUnit { get; set; }
+        public ImperialUnit CurrentImperialUnit { get; set; }
 
         public double MetricValue
         {
@@ -32,7 +32,7 @@ namespace SampleUnitConverter
             set
             {
                 this.metricValue = value;
-                this.OnPropertyChanged();
+                this.OnPropertyChanged();//Viewへ通知
             }
         }
 
@@ -42,8 +42,23 @@ namespace SampleUnitConverter
             set
             {
                 this.imperialValue = value;
-                this.OnPropertyChanged();
+                this.OnPropertyChanged();//Viewへ通知
             }
+        }
+
+        //コンストラクタ(ctorと打ったあとTabを2回)
+        public MainWindowViewModel()
+        {
+            this.CurrentMetricUnit = MetricUnit.Units.First();
+            this.CurrentImperialUnit = ImperialUnit.Units.First();
+
+            this.MetricToImperialUnit = new DelegateCommand(
+                () => this.ImperialValue = this.CurrentImperialUnit.FromMetricUnit(
+                    this.CurrentMetricUnit, this.MetricValue));
+
+            this.ImperialUnitToMetric = new DelegateCommand(
+                () => this.MetricValue = this.CurrentMetricUnit.FromImperialUnit(
+                    this.CurrentImperialUnit, this.ImperialValue));
         }
     }
 }
