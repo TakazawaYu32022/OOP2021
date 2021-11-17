@@ -20,149 +20,68 @@ namespace NumberGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+        Random rand = new Random();
+        int randomNumber;
+        //private const int Rows = 5;
+        //private const int Columns = 5;
+
         public MainWindow()
         {
             InitializeComponent();
             
         }
 
-        int answer = 0;
-        Random rand = new Random();
-        int randomNumber = rand.Next(1, 25);
-
-        private void Number1_Click(object sender, RoutedEventArgs e)
+        //ロード時に一度だけ実行される
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            answer = 1;
+            randomNumber = rand.Next(1, 26);
+
+            //行
+            /*for(int i = 0;i < Rows;i++){
+              grid.RowDefinitions.Add(new RowDefinition());
+              }
+            //列
+              for(int i = 0;i < Columns;i++){
+              grid.ColumnDefinitions.Add(new ColumnDefinition());
+              }
+              for(int i = 0; i< Rows;i+;){
+                    for(int j = 0;j < Columns;j++){
+                      var bt = new Button();
+                      bt.Width = MainForm.Width / Columns;
+                      bt.Height = MainForm.Height / Rows;
+                      bt.Content = j + 1;
+                      bt.Click += Bt_Click;
+                      Grid.SetRow(bt,i);
+                      Grid.SetColumn(bt,j);
+                      buttons.Add(bt);
+                    }
+              }
+              buttons.ForEach(bt => grid.Children.Add(bt));
+              MainForm.Height += tectDisp.Height + 50;*/
+        }
+
+        private void Number_Click(object sender, RoutedEventArgs e)
+        {
+            Button selectedButton = (Button)sender;
+            int answer = int.Parse(selectedButton.Content.ToString());
             if(answer == randomNumber)
             {
-                MessageBox.Show("あたり");
+                result.Text = "あたり";
             }else if(answer > randomNumber)
             {
-
+                result.Text = "大きすぎ";
+            }else if(answer < randomNumber)
+            {
+                result.Text = "小さすぎ";
             }
         }
+        /*private void Bt_Click(object sender,RoutedEventArgs e){
+            Button selectedButton = (Button)sender;
+            int num = (int)selectedButton.Content
+         }*/
 
-        private void Number2_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
-        private void Number3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number4_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number5_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number6_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number7_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number8_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number9_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number10_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number11_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number12_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number13_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number14_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number15_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number16_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number17_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number18_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number19_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number20_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number21_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number22_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number23_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number24_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Number25_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        
-
-        
     }
 }

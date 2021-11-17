@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="500">
+        Title="MainWindow" Height="500" Width="500" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -25,38 +25,38 @@
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="a" Text="仮置き" FontSize="30" HorizontalAlignment="Left" Grid.ColumnSpan="5" Width="492"/>
 
-        <Button x:Name="Number1" Content="1" Grid.Column="0" Grid.Row="1" Click="Number1_Click"/>
-        <Button x:Name="Number2" Content="2" Grid.Column="1" Grid.Row="1" Click="Number2_Click"/>
-        <Button x:Name="Number3" Content="3" Grid.Column="2" Grid.Row="1" Click="Number3_Click"/>
-        <Button x:Name="Number4" Content="4" Grid.Column="3" Grid.Row="1" Click="Number4_Click"/>
-        <Button x:Name="Number5" Content="5" Grid.Column="4" Grid.Row="1" Click="Number5_Click"/>
+        <Button x:Name="Number1" Content="1" Grid.Column="0" Grid.Row="1" Click="Number_Click"/>
+        <Button x:Name="Number2" Content="2" Grid.Column="1" Grid.Row="1" Click="Number_Click"/>
+        <Button x:Name="Number3" Content="3" Grid.Column="2" Grid.Row="1" Click="Number_Click"/>
+        <Button x:Name="Number4" Content="4" Grid.Column="3" Grid.Row="1" Click="Number_Click"/>
+        <Button x:Name="Number5" Content="5" Grid.Column="4" Grid.Row="1" Click="Number_Click"/>
         
-        <Button x:Name="Number6" Content="6" Grid.Column="0" Grid.Row="2" Click="Number6_Click"/>
-        <Button x:Name="Number7" Content="7" Grid.Column="1" Grid.Row="2" Click="Number7_Click"/>
-        <Button x:Name="Number8" Content="8" Grid.Column="2" Grid.Row="2" Click="Number8_Click"/>
-        <Button x:Name="Number9" Content="9" Grid.Column="3" Grid.Row="2" Click="Number9_Click"/>
-        <Button x:Name="Number10" Content="10" Grid.Column="4" Grid.Row="2" Click="Number10_Click"/>
+        <Button x:Name="Number6" Content="6" Grid.Column="0" Grid.Row="2" Click="Number_Click"/>
+        <Button x:Name="Number7" Content="7" Grid.Column="1" Grid.Row="2" Click="Number_Click"/>
+        <Button x:Name="Number8" Content="8" Grid.Column="2" Grid.Row="2" Click="Number_Click"/>
+        <Button x:Name="Number9" Content="9" Grid.Column="3" Grid.Row="2" Click="Number_Click"/>
+        <Button x:Name="Number10" Content="10" Grid.Column="4" Grid.Row="2" Click="Number_Click"/>
 
-        <Button x:Name="Number11" Content="11" Grid.Column="0" Grid.Row="3" Click="Number11_Click"/>
-        <Button x:Name="Number12" Content="12" Grid.Column="1" Grid.Row="3" Click="Number12_Click"/>
-        <Button x:Name="Number13" Content="13" Grid.Column="2" Grid.Row="3" Click="Number13_Click"/>
-        <Button x:Name="Number14" Content="14" Grid.Column="3" Grid.Row="3" Click="Number14_Click"/>
-        <Button x:Name="Number15" Content="15" Grid.Column="4" Grid.Row="3" Click="Number15_Click"/>
+        <Button x:Name="Number11" Content="11" Grid.Column="0" Grid.Row="3" Click="Number_Click"/>
+        <Button x:Name="Number12" Content="12" Grid.Column="1" Grid.Row="3" Click="Number_Click"/>
+        <Button x:Name="Number13" Content="13" Grid.Column="2" Grid.Row="3" Click="Number_Click"/>
+        <Button x:Name="Number14" Content="14" Grid.Column="3" Grid.Row="3" Click="Number_Click"/>
+        <Button x:Name="Number15" Content="15" Grid.Column="4" Grid.Row="3" Click="Number_Click"/>
 
-        <Button x:Name="Number16" Content="16" Grid.Column="0" Grid.Row="4" Click="Number16_Click"/>
-        <Button x:Name="Number17" Content="17" Grid.Column="1" Grid.Row="4" Click="Number17_Click"/>
-        <Button x:Name="Number18" Content="18" Grid.Column="2" Grid.Row="4" Click="Number18_Click"/>
-        <Button x:Name="Number19" Content="19" Grid.Column="3" Grid.Row="4" Click="Number19_Click"/>
-        <Button x:Name="Number20" Content="20" Grid.Column="4" Grid.Row="4" Click="Number20_Click"/>
+        <Button x:Name="Number16" Content="16" Grid.Column="0" Grid.Row="4" Click="Number_Click"/>
+        <Button x:Name="Number17" Content="17" Grid.Column="1" Grid.Row="4" Click="Number_Click"/>
+        <Button x:Name="Number18" Content="18" Grid.Column="2" Grid.Row="4" Click="Number_Click"/>
+        <Button x:Name="Number19" Content="19" Grid.Column="3" Grid.Row="4" Click="Number_Click"/>
+        <Button x:Name="Number20" Content="20" Grid.Column="4" Grid.Row="4" Click="Number_Click"/>
 
-        <Button x:Name="Number21" Content="21" Grid.Column="0" Grid.Row="5" Click="Number21_Click"/>
-        <Button x:Name="Number22" Content="22" Grid.Column="1" Grid.Row="5" Click="Number22_Click"/>
-        <Button x:Name="Number23" Content="23" Grid.Column="2" Grid.Row="5" Click="Number23_Click"/>
-        <Button x:Name="Number24" Content="24" Grid.Column="3" Grid.Row="5" Click="Number24_Click"/>
-        <Button x:Name="Number25" Content="25" Grid.Column="4" Grid.Row="5" Click="Number25_Click"/>
+        <Button x:Name="Number21" Content="21" Grid.Column="0" Grid.Row="5" Click="Number_Click"/>
+        <Button x:Name="Number22" Content="22" Grid.Column="1" Grid.Row="5" Click="Number_Click"/>
+        <Button x:Name="Number23" Content="23" Grid.Column="2" Grid.Row="5" Click="Number_Click"/>
+        <Button x:Name="Number24" Content="24" Grid.Column="3" Grid.Row="5" Click="Number_Click"/>
+        <Button x:Name="Number25" Content="25" Grid.Column="4" Grid.Row="5" Click="Number_Click"/>
 
         <StackPanel Grid.Row="6" Grid.ColumnSpan="6">
-            <TextBlock x:Name="kotae" FontSize="30" Text="仮置き" HorizontalAlignment="Stretch" Height="77"/>
+            <TextBlock x:Name="result" FontSize="30" Text="ここに結果を表示" HorizontalAlignment="Stretch" Height="77"/>
         </StackPanel>
 
 
