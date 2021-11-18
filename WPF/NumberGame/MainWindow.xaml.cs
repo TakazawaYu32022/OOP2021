@@ -50,7 +50,7 @@ namespace NumberGame
                       var bt = new Button();
                       bt.Width = MainForm.Width / Columns;
                       bt.Height = MainForm.Height / Rows;
-                      bt.Content = j + 1;
+                      bt.Content = (j + 1) + i * Rows;
                       bt.Click += Bt_Click;
                       Grid.SetRow(bt,i);
                       Grid.SetColumn(bt,j);
