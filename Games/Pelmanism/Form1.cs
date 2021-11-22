@@ -36,8 +36,9 @@ namespace Pelmanism
             {
                 cards[i] = new Card(picture[j]);
                 cards[i + 1] = new Card(picture[j]);
+                
             }
-
+            
 
         }
 
@@ -183,7 +184,12 @@ namespace Pelmanism
         private void ShuffleCard(Card[] playingCards)
         {
             Random random = new Random();
-            playingCards = 
+            for (int i = 0; i < playingCards.Length; i++)
+            {
+                //来週きく
+
+            }
+            //playingCards = playingCards.OrderBy(a => Guid.NewGuid()).ToArray();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
