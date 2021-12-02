@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimpleKakeibo
+namespace KantanKakeibo
 {
-    public partial class Form1 : Form
+    public partial class Statistics : Form
     {
-        public Form1()
+        public Statistics()
         {
             InitializeComponent();
         }
