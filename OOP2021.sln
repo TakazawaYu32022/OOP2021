@@ -130,6 +130,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{8636F086
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelmanism", "Games\Pelmanism\Pelmanism.csproj", "{07EC5612-F7A9-4773-895D-A18CFB257F09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graduation", "Graduation", "{34512778-C02A-4B5C-AC99-D2CC730B84AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KantanKakeibo", "Graduation\SimpleKakeibo\KantanKakeibo.csproj", "{B7AE178E-3545-42A9-AE4D-48AE1D9679AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -300,6 +304,10 @@ Global
 		{07EC5612-F7A9-4773-895D-A18CFB257F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07EC5612-F7A9-4773-895D-A18CFB257F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07EC5612-F7A9-4773-895D-A18CFB257F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AE178E-3545-42A9-AE4D-48AE1D9679AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7AE178E-3545-42A9-AE4D-48AE1D9679AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7AE178E-3545-42A9-AE4D-48AE1D9679AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7AE178E-3545-42A9-AE4D-48AE1D9679AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -348,6 +356,7 @@ Global
 		{32F151D9-60AB-4BBC-95F5-A938C7889ADC} = {DFF2E400-D77A-4E93-8FD0-CE1E3A1BE4CE}
 		{61676488-9DA9-4388-B6D4-2B5058CAA763} = {DFF2E400-D77A-4E93-8FD0-CE1E3A1BE4CE}
 		{07EC5612-F7A9-4773-895D-A18CFB257F09} = {8636F086-C0FD-4784-ADC6-995645FC770F}
+		{B7AE178E-3545-42A9-AE4D-48AE1D9679AA} = {34512778-C02A-4B5C-AC99-D2CC730B84AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7113F0C5-8A43-4AC4-8700-23C5823E617D}
