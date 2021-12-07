@@ -30,29 +30,28 @@ namespace SimpleKakeibo
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbTyokin = new System.Windows.Forms.TextBox();
+            this.tbKyouiku = new System.Windows.Forms.TextBox();
+            this.tbIryou = new System.Windows.Forms.TextBox();
+            this.tbKounetu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbZappi = new System.Windows.Forms.TextBox();
+            this.tbTuusin = new System.Windows.Forms.TextBox();
+            this.tbYosan = new System.Windows.Forms.TextBox();
+            this.tbTokubetu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbKoutuu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSyokuhi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbYatin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbMemo = new System.Windows.Forms.TextBox();
             this.lbDay = new System.Windows.Forms.Label();
@@ -62,8 +61,9 @@ namespace SimpleKakeibo
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btTotal = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.tbGoukei = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -71,29 +71,29 @@ namespace SimpleKakeibo
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.tbTyokin);
+            this.groupBox1.Controls.Add(this.tbKyouiku);
+            this.groupBox1.Controls.Add(this.tbIryou);
+            this.groupBox1.Controls.Add(this.tbKounetu);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.tbZappi);
+            this.groupBox1.Controls.Add(this.tbTuusin);
+            this.groupBox1.Controls.Add(this.tbYosan);
+            this.groupBox1.Controls.Add(this.tbGoukei);
+            this.groupBox1.Controls.Add(this.tbTokubetu);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.tbKoutuu);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbSyokuhi);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbYatin);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(12, 69);
@@ -102,41 +102,45 @@ namespace SimpleKakeibo
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // textBox12
+            // tbTyokin
             // 
-            this.textBox12.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox12.Location = new System.Drawing.Point(150, 264);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(120, 23);
-            this.textBox12.TabIndex = 1;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbTyokin.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTyokin.Location = new System.Drawing.Point(150, 264);
+            this.tbTyokin.Name = "tbTyokin";
+            this.tbTyokin.Size = new System.Drawing.Size(120, 23);
+            this.tbTyokin.TabIndex = 1;
+            this.tbTyokin.Text = "0";
+            this.tbTyokin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox9
+            // tbKyouiku
             // 
-            this.textBox9.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox9.Location = new System.Drawing.Point(150, 213);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(120, 23);
-            this.textBox9.TabIndex = 1;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbKyouiku.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbKyouiku.Location = new System.Drawing.Point(150, 213);
+            this.tbKyouiku.Name = "tbKyouiku";
+            this.tbKyouiku.Size = new System.Drawing.Size(120, 23);
+            this.tbKyouiku.TabIndex = 1;
+            this.tbKyouiku.Text = "0";
+            this.tbKyouiku.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox6
+            // tbIryou
             // 
-            this.textBox6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox6.Location = new System.Drawing.Point(150, 137);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 23);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbIryou.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbIryou.Location = new System.Drawing.Point(150, 137);
+            this.tbIryou.Name = "tbIryou";
+            this.tbIryou.Size = new System.Drawing.Size(120, 23);
+            this.tbIryou.TabIndex = 1;
+            this.tbIryou.Text = "0";
+            this.tbIryou.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox4
+            // tbKounetu
             // 
-            this.textBox4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox4.Location = new System.Drawing.Point(150, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 23);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbKounetu.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbKounetu.Location = new System.Drawing.Point(150, 62);
+            this.tbKounetu.Name = "tbKounetu";
+            this.tbKounetu.Size = new System.Drawing.Size(120, 23);
+            this.tbKounetu.TabIndex = 1;
+            this.tbKounetu.Text = "0";
+            this.tbKounetu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label9
             // 
@@ -168,50 +172,45 @@ namespace SimpleKakeibo
             this.label3.TabIndex = 0;
             this.label3.Text = "予算";
             // 
-            // textBox8
+            // tbZappi
             // 
-            this.textBox8.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox8.Location = new System.Drawing.Point(150, 163);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(120, 23);
-            this.textBox8.TabIndex = 1;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbZappi.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbZappi.Location = new System.Drawing.Point(150, 163);
+            this.tbZappi.Name = "tbZappi";
+            this.tbZappi.Size = new System.Drawing.Size(120, 23);
+            this.tbZappi.TabIndex = 1;
+            this.tbZappi.Text = "0";
+            this.tbZappi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox5
+            // tbTuusin
             // 
-            this.textBox5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox5.Location = new System.Drawing.Point(150, 87);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 23);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbTuusin.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTuusin.Location = new System.Drawing.Point(150, 87);
+            this.tbTuusin.Name = "tbTuusin";
+            this.tbTuusin.Size = new System.Drawing.Size(120, 23);
+            this.tbTuusin.TabIndex = 1;
+            this.tbTuusin.Text = "0";
+            this.tbTuusin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox3
+            // tbYosan
             // 
-            this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox3.Location = new System.Drawing.Point(150, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 23);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbYosan.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbYosan.Location = new System.Drawing.Point(150, 12);
+            this.tbYosan.Name = "tbYosan";
+            this.tbYosan.Size = new System.Drawing.Size(120, 23);
+            this.tbYosan.TabIndex = 1;
+            this.tbYosan.Text = "0";
+            this.tbYosan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox11
+            // tbTokubetu
             // 
-            this.textBox11.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox11.Location = new System.Drawing.Point(150, 304);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(120, 23);
-            this.textBox11.TabIndex = 1;
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox10.Location = new System.Drawing.Point(150, 238);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(120, 23);
-            this.textBox10.TabIndex = 1;
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbTokubetu.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTokubetu.Location = new System.Drawing.Point(150, 238);
+            this.tbTokubetu.Name = "tbTokubetu";
+            this.tbTokubetu.Size = new System.Drawing.Size(120, 23);
+            this.tbTokubetu.TabIndex = 1;
+            this.tbTokubetu.Text = "0";
+            this.tbTokubetu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
@@ -233,14 +232,15 @@ namespace SimpleKakeibo
             this.label8.TabIndex = 0;
             this.label8.Text = "教育費";
             // 
-            // textBox7
+            // tbKoutuu
             // 
-            this.textBox7.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox7.Location = new System.Drawing.Point(150, 188);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(120, 23);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbKoutuu.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbKoutuu.Location = new System.Drawing.Point(150, 188);
+            this.tbKoutuu.Name = "tbKoutuu";
+            this.tbKoutuu.Size = new System.Drawing.Size(120, 23);
+            this.tbKoutuu.TabIndex = 1;
+            this.tbKoutuu.Text = "0";
+            this.tbKoutuu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -272,14 +272,15 @@ namespace SimpleKakeibo
             this.label10.TabIndex = 0;
             this.label10.Text = "特別費";
             // 
-            // textBox1
+            // tbSyokuhi
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(150, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbSyokuhi.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbSyokuhi.Location = new System.Drawing.Point(150, 112);
+            this.tbSyokuhi.Name = "tbSyokuhi";
+            this.tbSyokuhi.Size = new System.Drawing.Size(120, 23);
+            this.tbSyokuhi.TabIndex = 1;
+            this.tbSyokuhi.Text = "0";
+            this.tbSyokuhi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 
@@ -311,14 +312,15 @@ namespace SimpleKakeibo
             this.label1.TabIndex = 0;
             this.label1.Text = "食費";
             // 
-            // textBox2
+            // tbYatin
             // 
-            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox2.Location = new System.Drawing.Point(150, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 23);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbYatin.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbYatin.Location = new System.Drawing.Point(150, 37);
+            this.tbYatin.Name = "tbYatin";
+            this.tbYatin.Size = new System.Drawing.Size(120, 23);
+            this.tbYatin.TabIndex = 1;
+            this.tbYatin.Text = "0";
+            this.tbYatin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -359,6 +361,7 @@ namespace SimpleKakeibo
             this.btSave.TabIndex = 4;
             this.btSave.Text = "保存";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btHome
             // 
@@ -412,15 +415,16 @@ namespace SimpleKakeibo
             this.button2.Text = "翌月";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btTotal
             // 
-            this.button3.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(325, 365);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 47);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "ジャンプ";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btTotal.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btTotal.Location = new System.Drawing.Point(325, 365);
+            this.btTotal.Name = "btTotal";
+            this.btTotal.Size = new System.Drawing.Size(73, 47);
+            this.btTotal.TabIndex = 6;
+            this.btTotal.Text = "計算";
+            this.btTotal.UseVisualStyleBackColor = true;
+            this.btTotal.Click += new System.EventHandler(this.btTotal_Click);
             // 
             // button4
             // 
@@ -432,13 +436,23 @@ namespace SimpleKakeibo
             this.button4.Text = "比較";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // tbGoukei
+            // 
+            this.tbGoukei.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbGoukei.Location = new System.Drawing.Point(150, 304);
+            this.tbGoukei.Name = "tbGoukei";
+            this.tbGoukei.Size = new System.Drawing.Size(120, 23);
+            this.tbGoukei.TabIndex = 1;
+            this.tbGoukei.Text = "0";
+            this.tbGoukei.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 424);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btTotal);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
@@ -461,28 +475,27 @@ namespace SimpleKakeibo
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbKyouiku;
+        private System.Windows.Forms.TextBox tbIryou;
+        private System.Windows.Forms.TextBox tbKounetu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbZappi;
+        private System.Windows.Forms.TextBox tbTuusin;
+        private System.Windows.Forms.TextBox tbYosan;
+        private System.Windows.Forms.TextBox tbTokubetu;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbKoutuu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSyokuhi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbYatin;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tbTyokin;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbMemo;
@@ -493,7 +506,8 @@ namespace SimpleKakeibo
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btTotal;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox tbGoukei;
     }
 }
